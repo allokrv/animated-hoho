@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===========================
+    THEME INFO
+    =========================== -->
+    <meta name="description" content="SantaGo is another free Bootstrap HTML Christmas sales and affiliate page template built and distributed by EvenFly Team as a small Cristmas gift under Creative Commons 3.0 license.">
+    <meta name="keywords" content="Christmas Template, Free Christmas Landing Page, Christmas Affiliate Landing Page, Free Christmas Sales Page Template">
+    <meta name="author" content="Mamun Srizon">
+
+    <!-- ===========================
+    SITE TITLE
+    =========================== -->
+    <title>Allokrv - Don't buy this crap</title>
+
+    <!-- ===========================
+    FAVICONS
+    =========================== -->
+    <link rel="icon" href="static/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="static/img/apple-touch-icon-ipad-retina.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="static/img/apple-touch-icon-iphone-retina.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="static/img/apple-touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="static/img/apple-touch-icon-iphone.png" />
+
+    <!-- ===========================
+    STYLESHEETS
+    =========================== -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/responsive.css">
+    <link rel="stylesheet" href="static/css/animate.css">
+
+    <!-- ===========================
+    FONTS
+    =========================== -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,900,600|Pacifico' rel='stylesheet' type='text/css'>
+
+    <!-- ===========================
+    GOOGLE ANALYTICS (Optional)
+    =========================== -->
+
+    <!-- #NOTE: Replace this line with your analytics code -->
+
+    <!--ANALYTICS END-->
+
+    <!--[if IE]>
+        <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body style="background-color: #636363;background-image: linear-gradient(170deg, white, darkred);">
+    <!-- ===========================
+    HERO SECTION
+    =========================== -->
+    <div id="hero">
+        <div class="redoverlay">
+            <div class="container">
+                <div class="row">
+                    <div class="herotext">
+                        {% block usernamedp %}{% endblock %}
+                        <h1 class="wow flipInY">It’s that time of the year</h1>
+						<br>
+
+                        <a class="btn btn-reverse wow zoomIn" href="#products">
+                            <h3>To save upto 75% this holiday! <span class="optional"><br>or spend some time looking at ads :)</span></h3>
+                        </a><!--#NOTE: texts inside the OPTIONAL tag above would be hidden on smaller mobile screens -->
+
+                        <p class="wow fadeInUp" data-wow-duration="2s">Limited-Time-Offer ends On {{ strftime }}</p>
+
+                        <img class="bigbell wow tada infinite" style="margin-left: -75%;" data-wow-duration="30s" src="static/img/bell.png" alt="">
+                    </div>
+
+                    <div class="santa wow bounceInDown" data-wow-duration="2s">
+                        <img src="static/img/santa.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--HERO SECTION END-->
+
+    <!-- ===========================
+    OVERVIEW SECTION
+    =========================== -->
+    <div>{% block test %}{% endblock %}</div>
+    <div id="overview products" class="container">
+        <!--SECTIONHEAD START-->
+        <div class="sectionhead">
+            <h2>Best and <span class="highlight">Cheapest</span> online shop of <span class="highlight">all time</span></h2>
+            <p style="color: darkred;">Super interessanter, beschreibender, geschriebener wobei eher abgetippter Text!</p>
+            <hr>
+        </div><!--SECTIONHEAD END-->
+		{% block items %}{% endblock %}
+    </div><!--OVERVIEW SECTION END-->
+
+    <!-- ===========================
+    CALL-TO-ACTION SECTION
+    =========================== -->
+    <div class="calltoaction">
+    <div class="lightoverlay">
+        <div class="container">
+            <div class="col-md-4">
+                <img src="static/img/tree.gif" alt="">
+            </div><!--CALL-TO-ACTION IMAGE END-->
+
+            <div class="sectionhead content col-md-8">
+                <h2>Best <span class="highlight">free landing page</span> template</h2>
+                <p>SantaGo is another free Christmas sales and affiliate landing page template built and distributed by <a href="http://evenfly.com">EvenFly Team</a> as a small cristmas gift under Creative Commons 3.0 license. If you have any question, suggestion or need assistance, feel free to <a href="mailto:support@venfly.com">email us</a> anytime.
+
+</p>
+                <a href="https://bfy.tw/OZAc" class="btn btn-default">Download</a>
+            </div><!--CALL-TO-ACTION CONTENT END-->
+        </div><!--CALL-TO-ACTION CONTAINER END-->
+    </div><!--CALL-TO-ACTION OVERLAY END-->
+</div><!--CALL-TO-ACTION END-->
+
+
+
+    <!-- ===========================
+    FOOTER
+    =========================== -->
+    <footer class="container text-center">
+        <h2 class="logo">Santa<span class="highlight">Go</span></h2>
+        <img class="santacap" src="static/img/santa_cap.png" alt="">
+        <P>A free Bootstrap Landing page temlate from <a href="http://evenfly.com">EvenFly</a> released under <a href="https://creativecommons.org/licenses/by/3.0/">CC 3.0</a> license.</P>
+		<P>heavily modified by <a>Allokrv</a>, running in Docker using Flask and postgresql.</P>
+        <hr>
+    </footer><!--FOOTER END-->
+
+    <!-- ===========================
+    SOCIAL ICONS
+    =========================== -->
+    <div class="sticky-container">
+		<ul class="sticky">
+			<li>
+                {% block loginout %}
+                {% endblock %}
+			</li>
+
+			<li>
+			    <a href="/register">
+                    <img title="" alt="" src="static/img/images.jpg" />
+                    <p>Register</p>
+				</a>
+			</li>
+
+		</ul>
+	</div>
+    <!-- ===========================
+    NECESSARY SCRIPTS
+    =========================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="static/js/evenfly.js"></script>
+    <script src="static/js/jquery.nicescroll.min.js"></script>
+    <script src="static/js/wow.min.js"></script>
+    <script src="static/js/snowstorm-min.js"></script>
+    <script>new WOW().init();</script>
+</body>
+</html>

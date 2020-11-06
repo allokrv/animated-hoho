@@ -1,0 +1,15 @@
+version: "3"
+services:
+  webapp:
+    build: ./webapp
+    volumes:
+      - ./webapp/html:/app/html
+      - ./webapp/src:/app/src
+    ports:
+      - "5000:5000"
+  db:
+    image: "postgres:latest"
+    build: ./db
+    ports:
+      - "5001:5432"
+    restart: always

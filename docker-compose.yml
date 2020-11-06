@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  db:
+    image: postgres
+    build: ./db
+    restart: always
+    ports:
+      - "5001:5432"
+    volumes:
+      - "./db/postgres-data:/var/lib/postgresql/data"
+    # tty: true
+    environment:
+      POSTGRES_DB: db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: nimda
+  webapp:
+    image: ubuntu
+    build: ./webapp
+    ports:
+      - "5000:5000"
+    volumes:
+      - "./webapp/html:/app/html"
+      - "./webapp/src:/app/src"
+    links:
+      - db
+    depends_on:
+      - "db"
+    tty: true
